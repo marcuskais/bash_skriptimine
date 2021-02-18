@@ -16,6 +16,6 @@ else
   else
     echo "probleem failiga $failinimi"
   fi
-# parameetrite kontrolli lõpp
+#parameetrite kontrolli lõpp
 fi
 
