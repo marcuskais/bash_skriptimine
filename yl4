@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 #
-# kasutajate lisamise skript
+#kasutajate lisamise skript, mis kasutad parameetrina kahte faili.
 if [ $# -ne 2 ]; then
     echo "Kasutusjuhend: $0 kasutajad ja paroolid"
 else
@@ -11,10 +11,8 @@ paroolid=$2
     echo "failid on korras"
     for rida in $(paste -d: $kasutajad $paroolid)
     do
-      # sellega peaks faili sisu olema nähtav, kui fail on kätte saadav ja n▒$ ▒üd echo asemel tuleb kutsuda vajalik skript
-      # echo $nimi
 kasutajanimi=$(echo "$rida" | cut -f1 -d:)
-      sh lisa_kasutaja $kasutajanimi # sellega me laseme lisa_kasutaja skript töö
+      sh lisa_kasutaja $kasutajanimi
 echo "$rida" | chpasswd
     done
   else
